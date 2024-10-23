@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdsourcing Task Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Crowdsourcing Task Management</h1>
+        <form action="/predict" method="POST" class="mt-4">
+            <!-- Task Difficulty Dropdown -->
+            <div class="form-group">
+                <label for="task_difficulty">Task Difficulty</label>
+                <select name="task_difficulty" id="task_difficulty" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <!-- Worker Skill Level Dropdown -->
+            <div class="form-group">
+                <label for="worker_skill">Worker Skill Level</label>
+                <select name="worker_skill" id="worker_skill" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <!-- Performance Score Input (Optional, for Quality Control) -->
+            <div class="form-group">
+                <label for="performance_score">Performance Score (Optional for Quality Control)</label>
+                <input type="number" class="form-control" name="performance_score" id="performance_score" placeholder="Enter performance score">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+
+        <!-- Display the results here -->
+        {% if predicted_worker %}
+        <div class="mt-4">
+            <h3>Results:</h3>
+            <p><strong>Allocated Worker:</strong> Worker {{ predicted_worker }}</p>
+            <p><strong>Predicted Task Completion Time:</strong> {{ predicted_time }} minutes</p>
+            <p><strong>Predicted Quality:</strong> {{ quality_label }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
