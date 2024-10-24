@@ -4,6 +4,7 @@ This project uses machine learning to improve task management in a crowdsourcing
 
 ## Table of Contents
 - [Overview](#overview)
+- [Deployed Link](#deployed-link)
 - [Features](#features)
 - [Models Used](#models-used)
 - [Installation](#installation)
@@ -20,6 +21,9 @@ Crowdsourcing platforms assign tasks to workers, monitor performance, and ensure
 - **Task Allocation:** Assigns tasks to the best worker based on the difficulty and worker skill level.
 - **Performance Analysis:** Predicts task completion time and worker performance.
 - **Quality Control:** Predicts task quality based on performance and task attributes.
+
+## Deployed Link
+You can access the live application [here](https://crowdsourcing-task-management-with.onrender.com).
 
 ## Features
 - **Task Allocation:** Uses a Decision Tree Classifier to allocate tasks based on skill and task difficulty.
@@ -82,10 +86,6 @@ The dataset used for training includes features such as:
 
 You can find the dataset in the `CrowdSourcing.csv` file in the project folder.
 
-## Screenshots
-
-![Crowdsourcing Task Management Interface](screenshots/interface.png)
-- Main Interface for task allocation and prediction.
 
 ## Technologies Used
 - **Python**
